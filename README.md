@@ -156,7 +156,22 @@ The installer will ask you:
 3. Which skill groups to install (Essential is always included)
 4. Project name
 
-After install it prints the exact `claude plugin install` commands to run inside Claude Code.
+If `claude` is in your PATH, it will offer to auto-install plugins. Otherwise it prints the exact commands to run.
+
+**Skill groups:**
+
+| Group | Skills | Plugins |
+|-------|--------|---------|
+| **Essential** *(always)* | `git-operations` | superpowers, context7, claude-md-management, pr-review-toolkit, code-review, code-simplifier, **claude-mem** |
+| GitLab | `gitlab-integration` | gitlab |
+| GitHub | — | github |
+| Python Development | python-best-practices, python-docs, pydantic, pytorch-lightning, code-refactor | — |
+| Frontend / UI-UX Design | 21 impeccable skills | frontend-design, playwright, **ui-ux-pro-max** |
+| Research & Academic | industrial-ai-research, latex-paper-en, latex-thesis-zh, paper-audit, research-paper-writing, typst-paper | — |
+| AI / Machine Learning | — | huggingface-skills |
+| Diagrams & Docs | mermaid-diagrams, skill-creator | — |
+| Video / React | remotion-best-practices | — |
+| Security | — | security-guidance |
 
 **To update skills later:**
 
