@@ -1,0 +1,78 @@
+# Claude Code Master Configuration
+# thg-demo-2026 - Talking Head Generation Demo
+
+version: "1.0"
+
+project:
+  name: "thg-demo-2026"
+  description: "Talking Head Generation Demo 2026"
+  organization: "UnithAI"
+  platform: "gitlab"
+  repository: "https://gitlab.com/unith-ai/thg-demo-2026"
+  primary_branch: "main"
+
+environment:
+  package_manager: "uv"
+  python_version: "3.11"
+  linter: "ruff"
+  formatter: "ruff"
+  test_runner: "pytest"
+
+vcs:
+  provider: "gitlab"
+  cli: "glab"
+  merge_strategy: "merge_request"
+  branch_prefix:
+    feature: "feature/"
+    bugfix: "bugfix/"
+    hotfix: "hotfix/"
+    task: "task-"
+  commit_convention: "conventional-commits"
+
+agents:
+  orchestrator: "./agents/orchestrator/orchestrator.md"
+  subagents:
+    git-manager: "./agents/subagents/git-manager.md"
+    feature-developer: "./agents/subagents/feature-developer.md"
+    code-reviewer: "./agents/subagents/code-reviewer.md"
+    test-engineer: "./agents/subagents/test-engineer.md"
+    ci-validator: "./agents/subagents/ci-validator.md"
+
+workflows:
+  feature: "./workflows/feature-workflow.md"
+  cascade-mr: "./workflows/cascade-mr.md"
+  mr-review: "./workflows/mr-review.md"
+
+skills:
+  # Development Tools
+  git-operations: "./skills/git-operations/SKILL.md"
+  gitlab-integration: "./skills/gitlab-integration/SKILL.md"
+  skill-creator: "./skills/skill-creator/SKILL.md"
+
+  # Python Development
+  python-best-practices: "./skills/python-best-practices/SKILL.md"
+  pydantic: "./skills/pydantic/SKILL.md"
+
+  # Machine Learning
+  pytorch-lightning: "./skills/pytorch-lightning/SKILL.md"
+
+  # Video/Media
+  remotion-best-practices: "./skills/remotion-best-practices/SKILL.md"
+
+templates:
+  commit-message: "./templates/commit-message.md"
+  mr-template: "./templates/mr-template.md"
+  review-template: "./templates/review-template.md"
+
+quality_gates:
+  pre_commit:
+    - "ruff_check"
+    - "ruff_format"
+    - "trailing_whitespace"
+    - "yaml_check"
+  pre_push:
+    - "pytest"
+    - "mypy"
+  ci_pipeline:
+    - "lint"
+    - "test"

@@ -14,6 +14,7 @@
     "gitlab@claude-plugins-official": true,
     "huggingface-skills@claude-plugins-official": true,
     "firebase@claude-plugins-official": true,
-    "ui-ux-pro-max@ui-ux-pro-max-skill": true
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
+    "claude-mem@thedotmack": true
   }
 }
