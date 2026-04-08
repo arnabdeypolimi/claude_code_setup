@@ -33,12 +33,12 @@ claude_code_setup/
 │       ├── artalk-theory/
 │       ├── code-refactor/
 │       ├── skill-creator/
-│       ├── industrial-ai-research/    # from unith-ai/unith_research_docs
-│       ├── latex-paper-en/            # from unith-ai/unith_research_docs
-│       ├── latex-thesis-zh/           # from unith-ai/unith_research_docs
-│       ├── paper-audit/               # from unith-ai/unith_research_docs
-│       ├── research-paper-writing/    # from unith-ai/unith_research_docs
-│       ├── typst-paper/               # from unith-ai/unith_research_docs
+│       ├── industrial-ai-research/
+│       ├── latex-paper-en/
+│       ├── latex-thesis-zh/
+│       ├── paper-audit/
+│       ├── research-paper-writing/
+│       ├── typst-paper/
 │       └── <21 impeccable UI/UX skills>/
 ├── agents/
 │   ├── orchestrator/
@@ -83,8 +83,6 @@ claude_code_setup/
 | `skill-creator` | Guide for creating new skills |
 
 ### Research & Academic Skills
-
-Source: [unith-ai/unith_research_docs](https://gitlab.com/unith-ai/unith_research_docs)
 
 | Skill | Description |
 |-------|-------------|
