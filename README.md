@@ -21,18 +21,24 @@ claude_code_setup/
 ├── .claude/
 │   ├── settings.json          # Enabled plugins and global model config
 │   ├── settings.local.json    # Local permission overrides (not committed)
-│   └── skills/                # All skill definitions (custom + impeccable)
+│   └── skills/                # All skill definitions (custom + research + UI/UX)
 │       ├── git-operations/
 │       ├── gitlab-integration/
 │       ├── python-best-practices/
+│       ├── python-docs/
 │       ├── pydantic/
 │       ├── pytorch-lightning/
 │       ├── mermaid-diagrams/
 │       ├── remotion-best-practices/
 │       ├── artalk-theory/
 │       ├── code-refactor/
-│       ├── python-docs/
 │       ├── skill-creator/
+│       ├── industrial-ai-research/    # from unith-ai/unith_research_docs
+│       ├── latex-paper-en/            # from unith-ai/unith_research_docs
+│       ├── latex-thesis-zh/           # from unith-ai/unith_research_docs
+│       ├── paper-audit/               # from unith-ai/unith_research_docs
+│       ├── research-paper-writing/    # from unith-ai/unith_research_docs
+│       ├── typst-paper/               # from unith-ai/unith_research_docs
 │       └── <21 impeccable UI/UX skills>/
 ├── agents/
 │   ├── orchestrator/
@@ -75,6 +81,19 @@ claude_code_setup/
 | `code-refactor` | Python refactoring to match project coding standards |
 | `python-docs` | Create and sync Python project documentation |
 | `skill-creator` | Guide for creating new skills |
+
+### Research & Academic Skills
+
+Source: [unith-ai/unith_research_docs](https://gitlab.com/unith-ai/unith_research_docs)
+
+| Skill | Description |
+|-------|-------------|
+| `industrial-ai-research` | Literature research for industrial AI (anomaly detection, predictive maintenance, scheduling) |
+| `latex-paper-en` | English LaTeX academic paper assistant — compile, grammar, logic, de-AI, translation |
+| `latex-thesis-zh` | Chinese LaTeX degree thesis — GB/T 7714, thuthesis/pkuthss, structure review |
+| `paper-audit` | Multi-agent paper review — critical, domain, literature, methodology reviewers |
+| `research-paper-writing` | ML/CV/NLP paper writing — intro, abstract, method, experiments section guides |
+| `typst-paper` | Typst academic paper assistant — same capabilities as `latex-paper-en` for Typst |
 
 ### Impeccable UI/UX Skills
 

@@ -12,6 +12,14 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 - `agents/<type>/<name>.md` — agent definitions (orchestrator and subagents)
 - `workflows/<name>.md` — multi-step workflow definitions
 - `templates/` — starter files to copy into new projects
+
+## Skill Sources
+
+| Source | Skills |
+|--------|--------|
+| Custom (this repo) | `git-operations`, `gitlab-integration`, `python-best-practices`, `python-docs`, `pydantic`, `pytorch-lightning`, `mermaid-diagrams`, `remotion-best-practices`, `artalk-theory`, `code-refactor`, `skill-creator` |
+| [unith-ai/unith_research_docs](https://gitlab.com/unith-ai/unith_research_docs) | `industrial-ai-research`, `latex-paper-en`, `latex-thesis-zh`, `paper-audit`, `research-paper-writing`, `typst-paper` |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 21 UI/UX skills (`frontend-design`, `animate`, `adapt`, `arrange`, `audit`, `bolder`, `clarify`, `colorize`, `critique`, `delight`, `distill`, `extract`, `harden`, `normalize`, `onboard`, `optimize`, `overdrive`, `polish`, `quieter`, `teach-impeccable`, `typeset`) |
   - `CLAUDE.md` — starter project CLAUDE.md
   - `settings.json` — starter `.claude/settings.json`
   - `config.yaml` — master project configuration template
