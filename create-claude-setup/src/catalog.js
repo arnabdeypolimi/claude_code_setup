@@ -75,6 +75,9 @@ export const GROUPS = [
       {
         command: 'claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill',
         install: 'claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill',
+        marketplace: { id: 'ui-ux-pro-max-skill', source: 'nextlevelbuilder/ui-ux-pro-max-skill' },
+        pluginName: 'ui-ux-pro-max',
+        marketplaceFlag: 'ui-ux-pro-max-skill',
       },
     ],
     copyAgents: false,

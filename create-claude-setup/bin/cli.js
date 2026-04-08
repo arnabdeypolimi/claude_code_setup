@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import { GROUPS } from '../src/catalog.js';
 import { install, readManifest } from '../src/installer.js';
 import { update } from '../src/updater.js';
+import { claudeAvailable, installAllPlugins } from '../src/plugin-installer.js';
 
 // Node version check
 const [major] = process.versions.node.split('.').map(Number);
@@ -118,28 +119,64 @@ async function main() {
 
   s.stop(pc.green('Done.'));
 
-  // ── Post-install: plugin instructions ────────────────────────────────────
+  // ── Plugin installation ───────────────────────────────────────────────────
   const { plan } = result;
+  const hasPlugins = plan.plugins.length > 0 || plan.marketplaceSetup.length > 0;
 
-  if (plan.plugins.length > 0 || plan.marketplaceSetup.length > 0) {
-    console.log('');
-    console.log(pc.bold('  Plugin installation required'));
-    console.log(pc.dim('  Run these commands from inside Claude Code in your project directory:'));
-    console.log('');
+  if (hasPlugins) {
+    const canAutoInstall = claudeAvailable();
 
-    // Marketplace setup first
-    for (const { command, install: installCmd } of plan.marketplaceSetup) {
-      console.log(pc.yellow(`  ${command}`));
-      console.log(pc.yellow(`  ${installCmd}`));
+    let autoInstall = false;
+    if (canAutoInstall) {
+      const choice = await confirm({
+        message: `Auto-install ${plan.plugins.length + plan.marketplaceSetup.length} plugin(s) via \`claude plugin install\`?`,
+        initialValue: true,
+      });
+      autoInstall = !isCancel(choice) && choice;
     }
 
-    // Standard plugins
-    for (const plugin of plan.plugins) {
-      const pluginName = plugin.split('@')[0];
-      console.log(pc.cyan(`  claude plugin install ${pluginName}`));
-    }
+    if (autoInstall) {
+      const ps = spinner();
+      ps.start('Installing plugins...');
 
-    console.log('');
+      const pluginResults = installAllPlugins({
+        plugins: plan.plugins,
+        marketplaceSetup: plan.marketplaceSetup,
+        targetDir: target,
+        onProgress: (name, status) => ps.message(`  ${name}: ${status}`),
+      });
+
+      const failed = pluginResults.filter(r => !r.ok);
+      ps.stop(failed.length === 0
+        ? pc.green(`Installed ${pluginResults.length} plugin(s).`)
+        : pc.yellow(`${pluginResults.length - failed.length}/${pluginResults.length} plugins installed.`));
+
+      if (failed.length > 0) {
+        console.log(pc.yellow('\n  Failed plugins (install manually inside Claude Code):'));
+        for (const { plugin, error } of failed) {
+          console.log(pc.yellow(`    claude plugin install ${plugin}`));
+          if (error) console.log(pc.dim(`      ${error}`));
+        }
+        console.log('');
+      }
+    } else {
+      // Print commands for manual install
+      console.log('');
+      if (!canAutoInstall) {
+        console.log(pc.dim('  `claude` CLI not found — install plugins manually inside Claude Code:'));
+      } else {
+        console.log(pc.dim('  Run these commands inside Claude Code in your project directory:'));
+      }
+      console.log('');
+      for (const { command, install: installCmd } of plan.marketplaceSetup) {
+        console.log(pc.yellow(`  ${command}`));
+        console.log(pc.yellow(`  ${installCmd}`));
+      }
+      for (const plugin of plan.plugins) {
+        console.log(pc.cyan(`  claude plugin install ${plugin.split('@')[0]}`));
+      }
+      console.log('');
+    }
   }
 
   // Skill summary
