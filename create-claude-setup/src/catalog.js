@@ -13,7 +13,15 @@ export const GROUPS = [
       'code-review@claude-plugins-official',
       'code-simplifier@claude-plugins-official',
     ],
-    marketplaceSetup: [],
+    marketplaceSetup: [
+      {
+        command: 'claude plugin marketplace add thedotmack thedotmack/claude-plugins',
+        install: 'claude plugin install claude-mem --marketplace thedotmack',
+        marketplace: { id: 'thedotmack', source: 'thedotmack/claude-plugins' },
+        pluginName: 'claude-mem',
+        marketplaceFlag: 'thedotmack',
+      },
+    ],
     copyAgents: true,
     copyTemplates: true,
   },
