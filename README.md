@@ -30,7 +30,6 @@ claude_code_setup/
 │       ├── pytorch-lightning/
 │       ├── mermaid-diagrams/
 │       ├── remotion-best-practices/
-│       ├── artalk-theory/
 │       ├── code-refactor/
 │       ├── skill-creator/
 │       ├── industrial-ai-research/
@@ -77,7 +76,6 @@ claude_code_setup/
 | `pytorch-lightning` | Neural network training with PyTorch Lightning |
 | `mermaid-diagrams` | Software diagrams using Mermaid syntax |
 | `remotion-best-practices` | Video creation in React with Remotion |
-| `artalk-theory` | ARTalk audio-to-motion pipeline theory (SIGGRAPH Asia 2025) |
 | `code-refactor` | Python refactoring to match project coding standards |
 | `python-docs` | Create and sync Python project documentation |
 | `skill-creator` | Guide for creating new skills |
