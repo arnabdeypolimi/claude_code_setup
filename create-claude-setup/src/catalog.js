@@ -163,7 +163,13 @@ export function resolveInstallPlan(selectedGroupIds) {
     if (!group) continue;
     group.skills.forEach(s => skills.add(s));
     group.plugins.forEach(p => plugins.add(p));
-    group.marketplaceSetup.forEach(m => marketplaceSetup.push(m));
+    group.marketplaceSetup.forEach(m => {
+      marketplaceSetup.push(m);
+      // Also add the marketplace plugin key so it appears in settings.json / lock file
+      if (m.pluginName && m.marketplaceFlag) {
+        plugins.add(`${m.pluginName}@${m.marketplaceFlag}`);
+      }
+    });
     if (group.copyAgents) copyAgents = true;
     if (group.copyTemplates) copyTemplates = true;
   }

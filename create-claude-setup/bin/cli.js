@@ -129,7 +129,7 @@ async function main() {
     let autoInstall = false;
     if (canAutoInstall) {
       const choice = await confirm({
-        message: `Auto-install ${plan.plugins.length + plan.marketplaceSetup.length} plugin(s) via \`claude plugin install\`?`,
+        message: `Auto-install ${plan.plugins.length} plugin(s) via \`claude plugin install\`?`,
         initialValue: true,
       });
       autoInstall = !isCancel(choice) && choice;

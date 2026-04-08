@@ -77,8 +77,15 @@ export function installAllPlugins({ plugins, marketplaceSetup, targetDir, onProg
     }
   }
 
-  // 3. Standard plugins
+  // 3. Standard plugins (skip any already handled via marketplaceSetup)
+  const handledViaMarketplace = new Set(
+    marketplaceSetup
+      .filter(m => m.pluginName && m.marketplaceFlag)
+      .map(m => `${m.pluginName}@${m.marketplaceFlag}`)
+  );
+
   for (const pluginKey of plugins) {
+    if (handledViaMarketplace.has(pluginKey)) continue;
     const pluginName = pluginKey.split('@')[0];
     const r = installPlugin(pluginName, targetDir);
     results.push({ plugin: pluginName, ...r });
