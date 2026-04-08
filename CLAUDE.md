@@ -4,15 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-This repo is a portable Claude Code configuration kit. It stores skills, plugin configs, hooks, and project templates that can be copied into new projects to bootstrap a consistent Claude Code setup.
+This repo is a portable Claude Code configuration kit. It stores skills, agent definitions, workflows, and project templates that can be copied into new projects to bootstrap a consistent Claude Code setup.
 
 ## Repo Conventions
 
-- `skills/<name>/SKILL.md` — skill prompt content for custom slash commands
-- `plugins/<name>/` — hook definitions and MCP server configs
-- `templates/CLAUDE.md` — starter CLAUDE.md to copy into new projects
-- `templates/settings.json` — starter `.claude/settings.json` for new projects
-- `docs/` — setup notes and references
+- `.claude/skills/<name>/SKILL.md` — skill prompt content (local custom skills)
+- `agents/<type>/<name>.md` — agent definitions (orchestrator and subagents)
+- `workflows/<name>.md` — multi-step workflow definitions
+- `templates/` — starter files to copy into new projects
+  - `CLAUDE.md` — starter project CLAUDE.md
+  - `settings.json` — starter `.claude/settings.json`
+  - `config.yaml` — master project configuration template
+  - `rules.md` — global rules and conventions template
+  - `allowlist.yaml` — security permissions template
+  - `commit-message.md` — commit message format guide
+  - `mr-template.md` — merge request description template
+  - `review-template.md` — code review output template
 
 `settings.local.json` files are machine-specific and should **not** be committed to project repos.
 
@@ -21,6 +28,9 @@ This repo is a portable Claude Code configuration kit. It stores skills, plugin 
 ```bash
 cp templates/CLAUDE.md <project>/
 cp templates/settings.json <project>/.claude/
+cp templates/config.yaml <project>/.claude/
+cp templates/rules.md <project>/.claude/
+cp templates/allowlist.yaml <project>/.claude/
 ```
 
 Then install plugins from inside the project directory:
@@ -31,12 +41,28 @@ claude plugin install context7
 claude plugin install pr-review-toolkit
 claude plugin install code-simplifier
 claude plugin install claude-md-management
+claude plugin install code-review
+claude plugin install skill-creator
+claude plugin install gitlab
+claude plugin install playwright
+claude plugin install security-guidance
+claude plugin install huggingface-skills
+claude plugin install frontend-design
+claude plugin install firebase
 ```
 
-Register the custom marketplace once globally:
+Register custom marketplaces once globally:
 
 ```bash
 claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill
+claude plugin marketplace add thedotmack thedotmack/claude-plugins
+```
+
+Then install marketplace plugins:
+
+```bash
+claude plugin install claude-mem --marketplace thedotmack
+claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
 ```
 
 ## Plugin Marketplaces
@@ -45,6 +71,7 @@ claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max
 |----|--------------|
 | `claude-plugins-official` | `anthropics/claude-plugins-official` |
 | `ui-ux-pro-max-skill` | `nextlevelbuilder/ui-ux-pro-max-skill` |
+| `thedotmack` | `thedotmack/claude-plugins` |
 
 ## Global Settings Location
 
