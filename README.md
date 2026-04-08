@@ -140,6 +140,36 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable)
 
 ## Quick Start for a New Project
 
+### Option A — Interactive installer (recommended)
+
+**Requirements:** Node.js 18+
+
+Run from inside your project directory:
+
+```bash
+npx github:arnabdeypolimi/claude_code_setup/create-claude-setup
+```
+
+The installer will ask you:
+1. Target directory
+2. VCS platform (GitLab / GitHub / Neither)
+3. Which skill groups to install (Essential is always included)
+4. Project name
+
+After install it prints the exact `claude plugin install` commands to run inside Claude Code.
+
+**To update skills later:**
+
+```bash
+npx github:arnabdeypolimi/claude_code_setup/create-claude-setup --update
+```
+
+The updater detects changed/added skills, shows a multiselect, and handles local edit conflicts (backup / overwrite / skip).
+
+---
+
+### Option B — Manual setup
+
 1. **Clone this repo**
    ```bash
    git clone https://github.com/arnabdeypolimi/claude_code_setup.git
@@ -154,7 +184,7 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable)
    cp claude_code_setup/templates/allowlist.yaml <your-project>/.claude/
    ```
 
-3. **Install plugins** (inside your new project directory)
+3. **Install plugins** (inside your new project directory, within Claude Code)
    ```bash
    claude plugin install superpowers
    claude plugin install context7

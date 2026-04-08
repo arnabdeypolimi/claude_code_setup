@@ -1,0 +1,29 @@
+{
+  "name": "create-claude-setup",
+  "version": "1.0.0",
+  "description": "Interactive installer for Claude Code configuration kit",
+  "type": "module",
+  "bin": {
+    "create-claude-setup": "./bin/cli.js"
+  },
+  "scripts": {
+    "prepare": "node scripts/embed-assets.js"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.9.0",
+    "picocolors": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "assets/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnabdeypolimi/claude_code_setup",
+    "directory": "create-claude-setup"
+  }
+}

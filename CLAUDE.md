@@ -33,6 +33,20 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 
 ## Deploying to a New Project
 
+### Installer (recommended)
+
+Requires Node.js 18+. Run from inside the target project directory:
+
+```bash
+npx github:arnabdeypolimi/claude_code_setup/create-claude-setup
+```
+
+Interactively selects skill groups and generates `settings.json`. Prints plugin install commands at the end. To update skills later: `npx create-claude-setup --update`.
+
+The installer lives in `create-claude-setup/`. Run `node scripts/embed-assets.js` from that directory before committing to refresh `assets/` when skills or templates change.
+
+### Manual deploy
+
 ```bash
 cp templates/CLAUDE.md <project>/
 cp templates/settings.json <project>/.claude/

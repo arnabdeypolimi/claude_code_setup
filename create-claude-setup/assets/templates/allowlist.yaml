@@ -1,0 +1,116 @@
+# Security Allowlist Configuration
+# Defines permitted operations for Claude Code
+
+version: "1.0"
+
+permissions:
+  # Bash commands that are allowed
+  bash_commands:
+    allow:
+      # Git operations
+      - "git *"
+
+      # GitLab CLI
+      - "glab *"
+
+      # UV package manager
+      - "uv *"
+
+      # Linting and formatting
+      - "ruff *"
+
+      # Testing
+      - "pytest *"
+
+      # Type checking
+      - "mypy *"
+
+      # Pre-commit
+      - "pre-commit *"
+
+      # Directory operations
+      - "mkdir *"
+      - "ls *"
+      - "tree *"
+      - "pwd"
+      - "cd *"
+
+      # File viewing (read-only)
+      - "cat *"
+      - "head *"
+      - "tail *"
+      - "less *"
+      - "wc *"
+
+    deny:
+      # Dangerous operations
+      - "rm -rf /"
+      - "rm -rf /*"
+      - "sudo *"
+      - "chmod 777 *"
+
+      # System modifications
+      - "apt *"
+      - "yum *"
+      - "brew *"
+
+      # Network operations (unless explicitly needed)
+      - "curl *"
+      - "wget *"
+
+  # File patterns that should not be written
+  file_patterns:
+    deny_write:
+      # Environment files
+      - "**/.env"
+      - "**/.env.*"
+      - "**/env.local"
+
+      # Secrets and credentials
+      - "**/secrets/**"
+      - "**/credentials/**"
+      - "**/*.pem"
+      - "**/*.key"
+      - "**/id_rsa*"
+      - "**/id_ed25519*"
+
+      # Config files with potential secrets
+      - "**/config.local.*"
+      - "**/*credentials*"
+      - "**/*secret*"
+
+    deny_read:
+      # Private keys
+      - "**/*.pem"
+      - "**/*.key"
+      - "**/id_rsa*"
+
+  # Tools that are allowed
+  tools:
+    allow:
+      - "Read"
+      - "Write"
+      - "Edit"
+      - "Glob"
+      - "Grep"
+      - "Bash"
+      - "Task"
+      - "WebFetch"
+      - "WebSearch"
+
+# Operations requiring explicit approval
+require_approval:
+  - "push_to_main"
+  - "force_push"
+  - "delete_branch"
+  - "merge_to_main"
+  - "production_deploy"
+
+# Operations that can be auto-approved
+auto_approve:
+  - "create_feature_branch"
+  - "create_task_branch"
+  - "push_to_feature_branch"
+  - "create_merge_request"
+  - "run_tests"
+  - "run_linter"
