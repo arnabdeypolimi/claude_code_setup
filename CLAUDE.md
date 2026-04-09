@@ -30,6 +30,7 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 | Custom (this repo) | `git-operations`, `gitlab-integration`, `python-best-practices`, `python-docs`, `pydantic`, `pytorch-lightning`, `mermaid-diagrams`, `remotion-best-practices`, `code-refactor`, `skill-creator` |
 | *(source TBD)* | `industrial-ai-research`, `latex-paper-en`, `latex-thesis-zh`, `paper-audit`, `research-paper-writing`, `typst-paper` |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 21 UI/UX skills (`frontend-design`, `animate`, `adapt`, `arrange`, `audit`, `bolder`, `clarify`, `colorize`, `critique`, `delight`, `distill`, `extract`, `harden`, `normalize`, `onboard`, `optimize`, `overdrive`, `polish`, `quieter`, `teach-impeccable`, `typeset`) |
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (`page-cro`, `copywriting`, and more) |
 
 ## Deploying to a New Project
 
@@ -78,6 +79,7 @@ Register custom marketplaces once globally:
 ```bash
 claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill
 claude plugin marketplace add thedotmack thedotmack/claude-plugins
+claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills
 ```
 
 Then install marketplace plugins:
@@ -85,6 +87,20 @@ Then install marketplace plugins:
 ```bash
 claude plugin install claude-mem --marketplace thedotmack
 claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
+claude plugin install marketing-skills --marketplace coreyhaines31
+```
+
+Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):
+
+```bash
+# Install all marketing skills
+npx skills add coreyhaines31/marketingskills
+
+# Install specific skills
+npx skills add coreyhaines31/marketingskills --skill page-cro copywriting
+
+# List available skills
+npx skills add coreyhaines31/marketingskills --list
 ```
 
 ## Plugin Marketplaces
@@ -94,6 +110,7 @@ claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
 | `claude-plugins-official` | `anthropics/claude-plugins-official` |
 | `ui-ux-pro-max-skill` | `nextlevelbuilder/ui-ux-pro-max-skill` |
 | `thedotmack` | `thedotmack/claude-plugins` |
+| `coreyhaines31` | `coreyhaines31/marketingskills` |
 
 ## Global Settings Location
 

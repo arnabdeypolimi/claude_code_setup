@@ -153,6 +153,25 @@ export const GROUPS = [
     copyAgents: false,
     copyTemplates: false,
   },
+  {
+    id: 'marketing',
+    label: 'Marketing',
+    hint: 'CRO, copywriting, and marketing skills (coreyhaines31/marketingskills)',
+    required: false,
+    skills: [],
+    plugins: [],
+    marketplaceSetup: [
+      {
+        command: 'claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills',
+        install: 'claude plugin install marketing-skills --marketplace coreyhaines31',
+        marketplace: { id: 'coreyhaines31', source: 'coreyhaines31/marketingskills' },
+        pluginName: 'marketing-skills',
+        marketplaceFlag: 'coreyhaines31',
+      },
+    ],
+    copyAgents: false,
+    copyTemplates: false,
+  },
 ];
 
 export function getGroupById(id) {
