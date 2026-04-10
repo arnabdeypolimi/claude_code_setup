@@ -80,6 +80,7 @@ Register custom marketplaces once globally:
 claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill
 claude plugin marketplace add thedotmack thedotmack/claude-plugins
 claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills
+claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman
 ```
 
 Then install marketplace plugins:
@@ -88,6 +89,7 @@ Then install marketplace plugins:
 claude plugin install claude-mem --marketplace thedotmack
 claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
 claude plugin install marketing-skills --marketplace coreyhaines31
+claude plugin install caveman --marketplace JuliusBrussee
 ```
 
 Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):
@@ -111,6 +113,7 @@ npx skills add coreyhaines31/marketingskills --list
 | `ui-ux-pro-max-skill` | `nextlevelbuilder/ui-ux-pro-max-skill` |
 | `thedotmack` | `thedotmack/claude-plugins` |
 | `coreyhaines31` | `coreyhaines31/marketingskills` |
+| `JuliusBrussee` | `JuliusBrussee/caveman` |
 
 ## Global Settings Location
 

@@ -172,6 +172,25 @@ export const GROUPS = [
     copyAgents: false,
     copyTemplates: false,
   },
+  {
+    id: 'caveman',
+    label: 'Caveman Mode',
+    hint: 'Ultra-compressed responses — cut ~75% of tokens while keeping full accuracy',
+    required: false,
+    skills: [],
+    plugins: [],
+    marketplaceSetup: [
+      {
+        command: 'claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman',
+        install: 'claude plugin install caveman --marketplace JuliusBrussee',
+        marketplace: { id: 'JuliusBrussee', source: 'JuliusBrussee/caveman' },
+        pluginName: 'caveman',
+        marketplaceFlag: 'JuliusBrussee',
+      },
+    ],
+    copyAgents: false,
+    copyTemplates: false,
+  },
 ];
 
 export function getGroupById(id) {
