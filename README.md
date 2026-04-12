@@ -172,6 +172,9 @@ If `claude` is in your PATH, it will offer to auto-install plugins. Otherwise it
 | Diagrams & Docs | mermaid-diagrams, skill-creator | — |
 | Video / React | remotion-best-practices | — |
 | Security | — | security-guidance |
+| Marketing | — | **marketing-skills** |
+| Caveman Mode | — | **caveman** |
+| Agent Skills | — | **agent-skills** |
 
 **To update skills later:**
 
@@ -219,12 +222,18 @@ The updater detects changed/added skills, shows a multiselect, and handles local
    ```bash
    claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill
    claude plugin marketplace add thedotmack thedotmack/claude-plugins
+   claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills
+   claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman
+   claude plugin marketplace add addy-agent-skills addyosmani/agent-skills
    ```
 
 5. **Install marketplace plugins**
    ```bash
    claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
    claude plugin install claude-mem --marketplace thedotmack
+   claude plugin install marketing-skills --marketplace coreyhaines31
+   claude plugin install caveman --marketplace JuliusBrussee
+   claude plugin install agent-skills --marketplace addy-agent-skills
    ```
 
 ## Plugin Marketplaces
@@ -234,6 +243,9 @@ The updater detects changed/added skills, shows a multiselect, and handles local
 | `claude-plugins-official` | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official Anthropic plugins |
 | `ui-ux-pro-max-skill` | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | UI/UX design intelligence |
 | `thedotmack` | [thedotmack/claude-plugins](https://github.com/thedotmack/claude-plugins) | Community plugins (claude-mem) |
+| `coreyhaines31` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (CRO, copywriting) |
+| `JuliusBrussee` | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | Ultra-compressed responses |
+| `addy-agent-skills` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Addy Osmani's agent skills collection |
 
 ## Global Settings
 

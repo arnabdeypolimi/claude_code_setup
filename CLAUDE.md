@@ -31,6 +31,7 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 | *(source TBD)* | `industrial-ai-research`, `latex-paper-en`, `latex-thesis-zh`, `paper-audit`, `research-paper-writing`, `typst-paper` |
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 21 UI/UX skills (`frontend-design`, `animate`, `adapt`, `arrange`, `audit`, `bolder`, `clarify`, `colorize`, `critique`, `delight`, `distill`, `extract`, `harden`, `normalize`, `onboard`, `optimize`, `overdrive`, `polish`, `quieter`, `teach-impeccable`, `typeset`) |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (`page-cro`, `copywriting`, and more) |
+| [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Agent skills collection by Addy Osmani |
 
 ## Deploying to a New Project
 
@@ -81,6 +82,7 @@ claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max
 claude plugin marketplace add thedotmack thedotmack/claude-plugins
 claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills
 claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman
+claude plugin marketplace add addy-agent-skills addyosmani/agent-skills
 ```
 
 Then install marketplace plugins:
@@ -90,6 +92,7 @@ claude plugin install claude-mem --marketplace thedotmack
 claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
 claude plugin install marketing-skills --marketplace coreyhaines31
 claude plugin install caveman --marketplace JuliusBrussee
+claude plugin install agent-skills --marketplace addy-agent-skills
 ```
 
 Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):
@@ -114,6 +117,7 @@ npx skills add coreyhaines31/marketingskills --list
 | `thedotmack` | `thedotmack/claude-plugins` |
 | `coreyhaines31` | `coreyhaines31/marketingskills` |
 | `JuliusBrussee` | `JuliusBrussee/caveman` |
+| `addy-agent-skills` | `addyosmani/agent-skills` |
 
 ## Global Settings Location
 

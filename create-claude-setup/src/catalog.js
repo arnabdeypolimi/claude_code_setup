@@ -191,6 +191,25 @@ export const GROUPS = [
     copyAgents: false,
     copyTemplates: false,
   },
+  {
+    id: 'agent-skills',
+    label: 'Agent Skills (addyosmani)',
+    hint: 'Addy Osmani\'s agent skills collection',
+    required: false,
+    skills: [],
+    plugins: [],
+    marketplaceSetup: [
+      {
+        command: 'claude plugin marketplace add addy-agent-skills addyosmani/agent-skills',
+        install: 'claude plugin install agent-skills --marketplace addy-agent-skills',
+        marketplace: { id: 'addy-agent-skills', source: 'addyosmani/agent-skills' },
+        pluginName: 'agent-skills',
+        marketplaceFlag: 'addy-agent-skills',
+      },
+    ],
+    copyAgents: false,
+    copyTemplates: false,
+  },
 ];
 
 export function getGroupById(id) {
