@@ -29,12 +29,14 @@ export function installPlugin(pluginName, targetDir) {
 }
 
 /**
- * Register a marketplace via `claude plugin marketplace add <id> <source>`.
+ * Register a marketplace via `claude plugin marketplace add <source>`.
+ * The CLI registers it under the marketplace's self-declared name; the
+ * caller's `id` is retained only for logging/display.
  * Returns { ok: true } or { ok: false, error: string }.
  */
 export function addMarketplace(id, source, targetDir) {
   try {
-    execFileSync('claude', ['plugin', 'marketplace', 'add', id, source], {
+    execFileSync('claude', ['plugin', 'marketplace', 'add', source], {
       cwd: targetDir,
       stdio: 'pipe',
     });
