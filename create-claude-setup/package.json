@@ -1,13 +1,14 @@
 {
   "name": "create-claude-setup",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Interactive installer for Claude Code configuration kit",
   "type": "module",
   "bin": {
     "create-claude-setup": "./bin/cli.js"
   },
   "scripts": {
-    "prepare": "node scripts/embed-assets.js"
+    "prepare": "node scripts/embed-assets.js",
+    "test": "node --test test/*.test.js"
   },
   "dependencies": {
     "@clack/prompts": "^0.9.0",
