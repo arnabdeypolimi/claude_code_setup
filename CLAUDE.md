@@ -40,7 +40,7 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 Requires Node.js 18+. Run from inside the target project directory:
 
 ```bash
-npx github:arnabdeypolimi/claude_code_setup/create-claude-setup
+npx github:arnabdeypolimi/claude_code_setup
 ```
 
 Interactively selects skill groups and generates `settings.json`. Prints plugin install commands at the end. To update skills later: `npx create-claude-setup --update`.
