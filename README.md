@@ -220,19 +220,19 @@ The updater detects changed/added skills, shows a multiselect, and handles local
 
 4. **Register custom marketplaces** (one-time, global)
    ```bash
-   claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill
-   claude plugin marketplace add thedotmack thedotmack/claude-plugins
-   claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills
-   claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman
-   claude plugin marketplace add addy-agent-skills addyosmani/agent-skills
+   claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+   claude plugin marketplace add thedotmack/claude-mem
+   claude plugin marketplace add coreyhaines31/marketingskills
+   claude plugin marketplace add JuliusBrussee/caveman
+   claude plugin marketplace add addyosmani/agent-skills
    ```
 
 5. **Install marketplace plugins**
    ```bash
    claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
    claude plugin install claude-mem@thedotmack
-   claude plugin install marketing-skills@coreyhaines31
-   claude plugin install caveman@JuliusBrussee
+   claude plugin install marketing-skills@marketingskills
+   claude plugin install caveman@caveman
    claude plugin install agent-skills@addy-agent-skills
    ```
 
@@ -242,9 +242,9 @@ The updater detects changed/added skills, shows a multiselect, and handles local
 |----------------|---------------|-------------|
 | `claude-plugins-official` | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Official Anthropic plugins |
 | `ui-ux-pro-max-skill` | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | UI/UX design intelligence |
-| `thedotmack` | [thedotmack/claude-plugins](https://github.com/thedotmack/claude-plugins) | Community plugins (claude-mem) |
-| `coreyhaines31` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (CRO, copywriting) |
-| `JuliusBrussee` | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | Ultra-compressed responses |
+| `thedotmack` | [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) | Community plugins (claude-mem) |
+| `marketingskills` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (CRO, copywriting) |
+| `caveman` | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | Ultra-compressed responses |
 | `addy-agent-skills` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Addy Osmani's agent skills collection |
 
 ## Global Settings

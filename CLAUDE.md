@@ -78,11 +78,11 @@ claude plugin install firebase
 Register custom marketplaces once globally:
 
 ```bash
-claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill
-claude plugin marketplace add thedotmack thedotmack/claude-plugins
-claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills
-claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman
-claude plugin marketplace add addy-agent-skills addyosmani/agent-skills
+claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+claude plugin marketplace add thedotmack/claude-mem
+claude plugin marketplace add coreyhaines31/marketingskills
+claude plugin marketplace add JuliusBrussee/caveman
+claude plugin marketplace add addyosmani/agent-skills
 ```
 
 Then install marketplace plugins:
@@ -90,8 +90,8 @@ Then install marketplace plugins:
 ```bash
 claude plugin install claude-mem@thedotmack
 claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
-claude plugin install marketing-skills@coreyhaines31
-claude plugin install caveman@JuliusBrussee
+claude plugin install marketing-skills@marketingskills
+claude plugin install caveman@caveman
 claude plugin install agent-skills@addy-agent-skills
 ```
 
@@ -114,9 +114,9 @@ npx skills add coreyhaines31/marketingskills --list
 |----|--------------|
 | `claude-plugins-official` | `anthropics/claude-plugins-official` |
 | `ui-ux-pro-max-skill` | `nextlevelbuilder/ui-ux-pro-max-skill` |
-| `thedotmack` | `thedotmack/claude-plugins` |
-| `coreyhaines31` | `coreyhaines31/marketingskills` |
-| `JuliusBrussee` | `JuliusBrussee/caveman` |
+| `thedotmack` | `thedotmack/claude-mem` |
+| `marketingskills` | `coreyhaines31/marketingskills` |
+| `caveman` | `JuliusBrussee/caveman` |
 | `addy-agent-skills` | `addyosmani/agent-skills` |
 
 ## Global Settings Location

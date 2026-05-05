@@ -15,9 +15,9 @@ export const GROUPS = [
     ],
     marketplaceSetup: [
       {
-        command: 'claude plugin marketplace add thedotmack thedotmack/claude-plugins',
+        command: 'claude plugin marketplace add thedotmack/claude-mem',
         install: 'claude plugin install claude-mem@thedotmack',
-        marketplace: { id: 'thedotmack', source: 'thedotmack/claude-plugins' },
+        marketplace: { id: 'thedotmack', source: 'thedotmack/claude-mem' },
         pluginName: 'claude-mem',
         marketplaceFlag: 'thedotmack',
       },
@@ -81,7 +81,7 @@ export const GROUPS = [
     ],
     marketplaceSetup: [
       {
-        command: 'claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill',
+        command: 'claude plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill',
         install: 'claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill',
         marketplace: { id: 'ui-ux-pro-max-skill', source: 'nextlevelbuilder/ui-ux-pro-max-skill' },
         pluginName: 'ui-ux-pro-max',
@@ -162,11 +162,11 @@ export const GROUPS = [
     plugins: [],
     marketplaceSetup: [
       {
-        command: 'claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills',
-        install: 'claude plugin install marketing-skills@coreyhaines31',
-        marketplace: { id: 'coreyhaines31', source: 'coreyhaines31/marketingskills' },
+        command: 'claude plugin marketplace add coreyhaines31/marketingskills',
+        install: 'claude plugin install marketing-skills@marketingskills',
+        marketplace: { id: 'marketingskills', source: 'coreyhaines31/marketingskills' },
         pluginName: 'marketing-skills',
-        marketplaceFlag: 'coreyhaines31',
+        marketplaceFlag: 'marketingskills',
       },
     ],
     copyAgents: false,
@@ -181,11 +181,11 @@ export const GROUPS = [
     plugins: [],
     marketplaceSetup: [
       {
-        command: 'claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman',
-        install: 'claude plugin install caveman@JuliusBrussee',
-        marketplace: { id: 'JuliusBrussee', source: 'JuliusBrussee/caveman' },
+        command: 'claude plugin marketplace add JuliusBrussee/caveman',
+        install: 'claude plugin install caveman@caveman',
+        marketplace: { id: 'caveman', source: 'JuliusBrussee/caveman' },
         pluginName: 'caveman',
-        marketplaceFlag: 'JuliusBrussee',
+        marketplaceFlag: 'caveman',
       },
     ],
     copyAgents: false,
@@ -200,7 +200,7 @@ export const GROUPS = [
     plugins: [],
     marketplaceSetup: [
       {
-        command: 'claude plugin marketplace add addy-agent-skills addyosmani/agent-skills',
+        command: 'claude plugin marketplace add addyosmani/agent-skills',
         install: 'claude plugin install agent-skills@addy-agent-skills',
         marketplace: { id: 'addy-agent-skills', source: 'addyosmani/agent-skills' },
         pluginName: 'agent-skills',
