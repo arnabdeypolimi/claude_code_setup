@@ -88,11 +88,11 @@ claude plugin marketplace add addy-agent-skills addyosmani/agent-skills
 Then install marketplace plugins:
 
 ```bash
-claude plugin install claude-mem --marketplace thedotmack
-claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
-claude plugin install marketing-skills --marketplace coreyhaines31
-claude plugin install caveman --marketplace JuliusBrussee
-claude plugin install agent-skills --marketplace addy-agent-skills
+claude plugin install claude-mem@thedotmack
+claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+claude plugin install marketing-skills@coreyhaines31
+claude plugin install caveman@JuliusBrussee
+claude plugin install agent-skills@addy-agent-skills
 ```
 
 Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):

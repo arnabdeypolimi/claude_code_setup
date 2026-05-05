@@ -61,13 +61,12 @@ export function installAllPlugins({ plugins, marketplaceSetup, targetDir, onProg
     onProgress?.(`marketplace:${marketplace.id}`, r.ok ? 'ok' : `failed: ${r.error}`);
   }
 
-  // 2. Marketplace plugins (from marketplaceSetup)
+  // 2. Marketplace plugins (from marketplaceSetup) — Claude Code expects `plugin@marketplace`
   for (const { pluginName, marketplaceFlag } of marketplaceSetup) {
     if (!pluginName) continue;
-    const args = ['plugin', 'install', pluginName];
-    if (marketplaceFlag) args.push('--marketplace', marketplaceFlag);
+    const installArg = marketplaceFlag ? `${pluginName}@${marketplaceFlag}` : pluginName;
     try {
-      execFileSync('claude', args, { cwd: targetDir, stdio: 'pipe' });
+      execFileSync('claude', ['plugin', 'install', installArg], { cwd: targetDir, stdio: 'pipe' });
       results.push({ plugin: pluginName, ok: true });
       onProgress?.(pluginName, 'ok');
     } catch (err) {

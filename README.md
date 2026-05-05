@@ -229,11 +229,11 @@ The updater detects changed/added skills, shows a multiselect, and handles local
 
 5. **Install marketplace plugins**
    ```bash
-   claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill
-   claude plugin install claude-mem --marketplace thedotmack
-   claude plugin install marketing-skills --marketplace coreyhaines31
-   claude plugin install caveman --marketplace JuliusBrussee
-   claude plugin install agent-skills --marketplace addy-agent-skills
+   claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+   claude plugin install claude-mem@thedotmack
+   claude plugin install marketing-skills@coreyhaines31
+   claude plugin install caveman@JuliusBrussee
+   claude plugin install agent-skills@addy-agent-skills
    ```
 
 ## Plugin Marketplaces

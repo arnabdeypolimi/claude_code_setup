@@ -16,7 +16,7 @@ export const GROUPS = [
     marketplaceSetup: [
       {
         command: 'claude plugin marketplace add thedotmack thedotmack/claude-plugins',
-        install: 'claude plugin install claude-mem --marketplace thedotmack',
+        install: 'claude plugin install claude-mem@thedotmack',
         marketplace: { id: 'thedotmack', source: 'thedotmack/claude-plugins' },
         pluginName: 'claude-mem',
         marketplaceFlag: 'thedotmack',
@@ -82,7 +82,7 @@ export const GROUPS = [
     marketplaceSetup: [
       {
         command: 'claude plugin marketplace add ui-ux-pro-max-skill nextlevelbuilder/ui-ux-pro-max-skill',
-        install: 'claude plugin install ui-ux-pro-max --marketplace ui-ux-pro-max-skill',
+        install: 'claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill',
         marketplace: { id: 'ui-ux-pro-max-skill', source: 'nextlevelbuilder/ui-ux-pro-max-skill' },
         pluginName: 'ui-ux-pro-max',
         marketplaceFlag: 'ui-ux-pro-max-skill',
@@ -163,7 +163,7 @@ export const GROUPS = [
     marketplaceSetup: [
       {
         command: 'claude plugin marketplace add coreyhaines31 coreyhaines31/marketingskills',
-        install: 'claude plugin install marketing-skills --marketplace coreyhaines31',
+        install: 'claude plugin install marketing-skills@coreyhaines31',
         marketplace: { id: 'coreyhaines31', source: 'coreyhaines31/marketingskills' },
         pluginName: 'marketing-skills',
         marketplaceFlag: 'coreyhaines31',
@@ -182,7 +182,7 @@ export const GROUPS = [
     marketplaceSetup: [
       {
         command: 'claude plugin marketplace add JuliusBrussee JuliusBrussee/caveman',
-        install: 'claude plugin install caveman --marketplace JuliusBrussee',
+        install: 'claude plugin install caveman@JuliusBrussee',
         marketplace: { id: 'JuliusBrussee', source: 'JuliusBrussee/caveman' },
         pluginName: 'caveman',
         marketplaceFlag: 'JuliusBrussee',
@@ -201,7 +201,7 @@ export const GROUPS = [
     marketplaceSetup: [
       {
         command: 'claude plugin marketplace add addy-agent-skills addyosmani/agent-skills',
-        install: 'claude plugin install agent-skills --marketplace addy-agent-skills',
+        install: 'claude plugin install agent-skills@addy-agent-skills',
         marketplace: { id: 'addy-agent-skills', source: 'addyosmani/agent-skills' },
         pluginName: 'agent-skills',
         marketplaceFlag: 'addy-agent-skills',
