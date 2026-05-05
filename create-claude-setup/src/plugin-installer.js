@@ -1,4 +1,33 @@
 import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { homedir } from 'node:os';
+import { join } from 'node:path';
+
+/**
+ * The `addyosmani/agent-skills` marketplace.json declares its only plugin
+ * with `source: { source: "github", repo: "addyosmani/agent-skills" }`,
+ * which makes Claude Code re-clone via SSH (`git@github.com:`). On machines
+ * without GitHub SSH keys that fails. The plugin lives in the same repo as
+ * the marketplace, so rewriting the entry to `source: "./"` lets the CLI
+ * reuse the already-cloned marketplace checkout.
+ */
+function patchAddyAgentSkillsMarketplace() {
+  const path = join(
+    homedir(),
+    '.claude/plugins/marketplaces/addy-agent-skills/.claude-plugin/marketplace.json'
+  );
+  if (!existsSync(path)) return;
+  const raw = readFileSync(path, 'utf8');
+  const data = JSON.parse(raw);
+  let changed = false;
+  for (const plugin of data.plugins ?? []) {
+    if (plugin?.name === 'agent-skills' && typeof plugin.source === 'object') {
+      plugin.source = './';
+      changed = true;
+    }
+  }
+  if (changed) writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+}
 
 /**
  * Check whether the `claude` CLI is available in PATH.
@@ -61,6 +90,9 @@ export function installAllPlugins({ plugins, marketplaceSetup, targetDir, onProg
     if (!marketplace) continue;
     const r = addMarketplace(marketplace.id, marketplace.source, targetDir);
     onProgress?.(`marketplace:${marketplace.id}`, r.ok ? 'ok' : `failed: ${r.error}`);
+    if (r.ok && marketplace.id === 'addy-agent-skills') {
+      patchAddyAgentSkillsMarketplace();
+    }
   }
 
   // 2. Marketplace plugins (from marketplaceSetup) — Claude Code expects `plugin@marketplace`
