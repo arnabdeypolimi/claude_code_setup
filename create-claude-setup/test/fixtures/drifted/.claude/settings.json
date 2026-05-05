@@ -1,0 +1,7 @@
+{
+  "model": "sonnet",
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "caveman@JuliusBrussee": true
+  }
+}
