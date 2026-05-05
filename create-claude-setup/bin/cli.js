@@ -18,6 +18,7 @@ if (major < 18) {
 
 const args = process.argv.slice(2);
 const isUpdate = args.includes('--update');
+const isDoctor = args[0] === 'doctor';
 const targetArg = args.find(a => !a.startsWith('--'));
 
 const manifest = readManifest();
@@ -31,6 +32,44 @@ async function main() {
     await update(targetDir);
     outro(pc.green('Update complete!'));
     return;
+  }
+
+  if (isDoctor) {
+    const { diagnose } = await import('../src/doctor.js');
+    const targetDir = path.resolve(args[1] ?? process.cwd());
+    let report;
+    try {
+      report = diagnose(targetDir);
+    } catch (err) {
+      console.error(pc.red(err.message));
+      process.exit(2);
+    }
+
+    if (report.healthy) {
+      outro(pc.green('No drift detected.'));
+      return;
+    }
+
+    console.log('');
+    if (report.skillsMissingOnDisk.length) {
+      console.log(pc.yellow('  Skills in lock but missing on disk:'));
+      report.skillsMissingOnDisk.forEach(s => console.log(pc.yellow(`    - ${s}`)));
+    }
+    if (report.skillsExtraOnDisk.length) {
+      console.log(pc.yellow('  Skills on disk but not in lock:'));
+      report.skillsExtraOnDisk.forEach(s => console.log(pc.yellow(`    - ${s}`)));
+    }
+    if (report.pluginsMissingFromSettings.length) {
+      console.log(pc.yellow('  Plugins in lock but not enabled in settings.json:'));
+      report.pluginsMissingFromSettings.forEach(p => console.log(pc.yellow(`    - ${p}`)));
+    }
+    if (report.pluginsExtraInSettings.length) {
+      console.log(pc.yellow('  Plugins enabled in settings.json but not in lock:'));
+      report.pluginsExtraInSettings.forEach(p => console.log(pc.yellow(`    - ${p}`)));
+    }
+    console.log('');
+    cancel('Drift detected.');
+    process.exit(1);
   }
 
   // ── Step 1: Target directory ──────────────────────────────────────────────
