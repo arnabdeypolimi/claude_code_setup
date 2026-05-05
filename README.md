@@ -147,7 +147,7 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable)
 Run from inside your project directory:
 
 ```bash
-npx github:arnabdeypolimi/claude_code_setup/create-claude-setup
+npx github:arnabdeypolimi/claude_code_setup
 ```
 
 The installer will ask you:
@@ -179,7 +179,7 @@ If `claude` is in your PATH, it will offer to auto-install plugins. Otherwise it
 **To update skills later:**
 
 ```bash
-npx github:arnabdeypolimi/claude_code_setup/create-claude-setup --update
+npx github:arnabdeypolimi/claude_code_setup --update
 ```
 
 The updater detects changed/added skills, shows a multiselect, and handles local edit conflicts (backup / overwrite / skip).
