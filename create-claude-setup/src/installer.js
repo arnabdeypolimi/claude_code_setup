@@ -134,10 +134,15 @@ export async function install({ target, selectedGroups, projectName, vcsProvider
 
 function applyTokens(content, projectName, vcsProvider) {
   const vcsCli = vcsProvider === 'github' ? 'gh' : vcsProvider === 'gitlab' ? 'glab' : vcsProvider;
+  const host = vcsProvider === 'github' ? 'github.com' : vcsProvider === 'gitlab' ? 'gitlab.com' : `${vcsProvider}.com`;
 
   // Replace placeholder project name (various common patterns in config.yaml)
-  content = content.replace(/name:\s*["']?thg-demo-2026["']?/g, `name: "${projectName}"`);
   content = content.replace(/name:\s*["']?my-project["']?/g, `name: "${projectName}"`);
+
+  // Replace placeholder description / organization / repository
+  content = content.replace(/description:\s*["']?My project["']?/g, `description: "${projectName}"`);
+  content = content.replace(/organization:\s*["']?my-org["']?/g, `organization: "my-org"`);
+  content = content.replace(/repository:\s*["']?https:\/\/gitlab\.com\/my-org\/my-project["']?/g, `repository: "https://${host}/my-org/${projectName}"`);
 
   // Replace VCS provider
   content = content.replace(/platform:\s*["']?gitlab["']?/g, `platform: "${vcsProvider}"`);

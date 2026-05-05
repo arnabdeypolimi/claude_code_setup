@@ -24,12 +24,12 @@ class TtsProviderParams(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
     url: str = ""
-    unith_api_key: str = Field(default="", alias="unithApiKey")
+    provider_api_key: str = Field(default="", alias="providerApiKey")
 
 # Construction via alias still works:
-p = TtsProviderParams(unithApiKey="key")
+p = TtsProviderParams(providerApiKey="key")
 # Attribute access uses snake_case:
-assert p.unith_api_key == "key"
+assert p.provider_api_key == "key"
 ```
 
 ## Enums in Models

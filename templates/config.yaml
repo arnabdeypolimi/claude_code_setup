@@ -1,14 +1,14 @@
 # Claude Code Master Configuration
-# thg-demo-2026 - Talking Head Generation Demo
+# my-project - Project starter template
 
 version: "1.0"
 
 project:
-  name: "thg-demo-2026"
-  description: "Talking Head Generation Demo 2026"
-  organization: "UnithAI"
+  name: "my-project"
+  description: "My project"
+  organization: "my-org"
   platform: "gitlab"
-  repository: "https://gitlab.com/unith-ai/thg-demo-2026"
+  repository: "https://gitlab.com/my-org/my-project"
   primary_branch: "main"
 
 environment:

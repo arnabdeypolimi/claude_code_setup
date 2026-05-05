@@ -33,7 +33,8 @@
     "playwright@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
-    "claude-mem@thedotmack": true
+    "claude-mem@thedotmack": true,
+    "caveman@JuliusBrussee": true
   },
   "context": {
     "include": [

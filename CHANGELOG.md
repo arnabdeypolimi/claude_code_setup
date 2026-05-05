@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 
+## [1.1.1] — 2026-05-05
+
+### Changed
+- Refactor.
+
 ## [1.1.0] — 2026-05-05
 
 ### Added
