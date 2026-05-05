@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Claude Code Setup — for AI engineers">
+  <!-- Mark -->
+  <g transform="translate(16, 32)">
+    <rect width="96" height="96" rx="20" fill="#DA7757"/>
+    <!-- Bold prompt chevron -->
+    <path d="M32 26 L66 48 L32 70" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="140" y="86" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace" font-size="34" font-weight="700" fill="#1a1a1a" letter-spacing="-1">Claude Code Setup</text>
+  <text x="141" y="114" font-family="ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="500" fill="#6b6b6b" letter-spacing="0.8">for AI engineers</text>
+</svg>
