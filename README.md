@@ -5,6 +5,13 @@
   </picture>
 </p>
 
+<p align="left">
+  <a href="https://github.com/arnabdeypolimi/claude_code_setup/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/arnabdeypolimi/claude_code_setup?color=DA7757"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-DA7757"></a>
+  <img alt="Node 18+" src="https://img.shields.io/badge/node-%E2%89%A518-DA7757">
+  <a href="https://github.com/arnabdeypolimi/claude_code_setup/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/arnabdeypolimi/claude_code_setup/actions/workflows/ci.yml/badge.svg"></a>
+</p>
+
 # Claude Code Setup for AI Engineers
 
 A portable Claude Code configuration kit built for AI engineers — model training, research, prototyping, and shipping ML systems. One `npx` command bootstraps a project with the skills, agents, workflows, and plugins you actually use day-to-day.
@@ -44,6 +51,22 @@ npx github:arnabdeypolimi/claude_code_setup --update
 ```
 
 The updater detects changed/added skills, shows a multiselect, and resolves local edit conflicts (backup / overwrite / skip).
+
+## Diagnose drift — `doctor`
+
+After install, your project has a `claude-setup.lock.json` that records which skills and plugins were set up. `doctor` checks that nothing has drifted:
+
+```bash
+npx github:arnabdeypolimi/claude_code_setup doctor
+```
+
+It reports:
+- Skills listed in the lock but missing from `.claude/skills/`
+- Skills present on disk but not in the lock
+- Plugins enabled in the lock but missing from `.claude/settings.json`
+- Plugins enabled in `.claude/settings.json` but not in the lock
+
+Exits non-zero if drift is found, so it's safe to run in CI.
 
 ## AI engineer workflows
 

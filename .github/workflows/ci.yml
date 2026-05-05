@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: create-claude-setup/package-lock.json
+
+      - name: Install installer deps
+        working-directory: create-claude-setup
+        run: npm ci
+
+      - name: Embed assets
+        working-directory: create-claude-setup
+        run: node scripts/embed-assets.js
+
+      - name: Run tests
+        working-directory: create-claude-setup
+        run: npm test
+
+      - name: Validate root JSON files
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('templates/settings.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('skills-lock.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+
+      - name: Syntax-check installer entrypoint
+        run: node --check create-claude-setup/bin/cli.js

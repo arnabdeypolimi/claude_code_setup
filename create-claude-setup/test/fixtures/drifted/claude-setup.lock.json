@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1",
+  "kitVersion": "abc1234",
+  "installedAt": "2026-01-01T00:00:00.000Z",
+  "lastUpdated": "2026-01-01T00:00:00.000Z",
+  "selectedGroups": ["essential", "python"],
+  "projectName": "fixture",
+  "vcsProvider": "github",
+  "installedSkills": {
+    "git-operations": {
+      "assetHash": "deadbeef",
+      "installedHash": "deadbeef",
+      "installedAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    }
+  },
+  "enabledPlugins": [
+    "superpowers@claude-plugins-official",
+    "code-review@claude-plugins-official"
+  ],
+  "installedTemplates": []
+}
