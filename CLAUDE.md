@@ -32,6 +32,7 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 21 UI/UX skills (`frontend-design`, `animate`, `adapt`, `arrange`, `audit`, `bolder`, `clarify`, `colorize`, `critique`, `delight`, `distill`, `extract`, `harden`, `normalize`, `onboard`, `optimize`, `overdrive`, `polish`, `quieter`, `teach-impeccable`, `typeset`) |
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (`page-cro`, `copywriting`, and more) |
 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Agent skills collection by Addy Osmani |
+| [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | Academic research pipeline (`deep-research`, `academic-paper`, `academic-paper-reviewer`, `academic-pipeline`) |
 
 ## Deploying to a New Project
 
@@ -83,6 +84,7 @@ claude plugin marketplace add thedotmack/claude-mem
 claude plugin marketplace add coreyhaines31/marketingskills
 claude plugin marketplace add JuliusBrussee/caveman
 claude plugin marketplace add addyosmani/agent-skills
+claude plugin marketplace add Imbad0202/academic-research-skills
 ```
 
 Then install marketplace plugins:
@@ -93,6 +95,7 @@ claude plugin install ui-ux-pro-max@ui-ux-pro-max-skill
 claude plugin install marketing-skills@marketingskills
 claude plugin install caveman@caveman
 claude plugin install agent-skills@addy-agent-skills
+claude plugin install academic-research-skills@academic-research-skills
 ```
 
 Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):
@@ -118,6 +121,7 @@ npx skills add coreyhaines31/marketingskills --list
 | `marketingskills` | `coreyhaines31/marketingskills` |
 | `caveman` | `JuliusBrussee/caveman` |
 | `addy-agent-skills` | `addyosmani/agent-skills` |
+| `academic-research-skills` | `Imbad0202/academic-research-skills` |
 
 ## Global Settings Location
 

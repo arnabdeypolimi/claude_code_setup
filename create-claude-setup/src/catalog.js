@@ -94,7 +94,7 @@ export const GROUPS = [
   {
     id: 'research',
     label: 'Research & Academic Writing',
-    hint: 'LaTeX, Typst, paper audit, industrial AI research',
+    hint: 'LaTeX, Typst, paper audit, industrial AI research, academic research pipeline',
     required: false,
     skills: [
       'industrial-ai-research',
@@ -105,7 +105,15 @@ export const GROUPS = [
       'typst-paper',
     ],
     plugins: [],
-    marketplaceSetup: [],
+    marketplaceSetup: [
+      {
+        command: 'claude plugin marketplace add Imbad0202/academic-research-skills',
+        install: 'claude plugin install academic-research-skills@academic-research-skills',
+        marketplace: { id: 'academic-research-skills', source: 'Imbad0202/academic-research-skills' },
+        pluginName: 'academic-research-skills',
+        marketplaceFlag: 'academic-research-skills',
+      },
+    ],
     copyAgents: false,
     copyTemplates: false,
   },

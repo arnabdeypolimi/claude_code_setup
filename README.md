@@ -166,7 +166,7 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable). Useful when
 | GitHub | — | github |
 | Python Development | python-best-practices, python-docs, pydantic, pytorch-lightning, code-refactor | — |
 | AI / Machine Learning | — | huggingface-skills |
-| Research & Academic | industrial-ai-research, latex-paper-en, latex-thesis-zh, paper-audit, research-paper-writing, typst-paper | — |
+| Research & Academic | industrial-ai-research, latex-paper-en, latex-thesis-zh, paper-audit, research-paper-writing, typst-paper | **academic-research-skills** |
 | Frontend / UI-UX | 21 impeccable skills | frontend-design, playwright, **ui-ux-pro-max** |
 | Diagrams & Docs | mermaid-diagrams, skill-creator | — |
 | Video / React | remotion-best-practices | — |
@@ -244,6 +244,7 @@ If you'd rather not run the installer:
    claude plugin marketplace add coreyhaines31/marketingskills
    claude plugin marketplace add JuliusBrussee/caveman
    claude plugin marketplace add addyosmani/agent-skills
+   claude plugin marketplace add Imbad0202/academic-research-skills
    ```
 
 5. Install marketplace plugins:
@@ -253,6 +254,7 @@ If you'd rather not run the installer:
    claude plugin install marketing-skills@marketingskills
    claude plugin install caveman@caveman
    claude plugin install agent-skills@addy-agent-skills
+   claude plugin install academic-research-skills@academic-research-skills
    ```
 
 ## Plugin marketplaces
@@ -265,6 +267,7 @@ If you'd rather not run the installer:
 | `marketingskills` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (CRO, copywriting) |
 | `caveman` | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | Ultra-compressed responses |
 | `addy-agent-skills` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Addy Osmani's agent skills |
+| `academic-research-skills` | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | Academic research pipeline (research → write → review → revise → finalize) |
 
 ## Global settings
 
