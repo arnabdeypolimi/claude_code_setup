@@ -33,6 +33,7 @@ This repo is a portable Claude Code configuration kit. It stores skills, agent d
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | Marketing skills (`page-cro`, `copywriting`, and more) |
 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Agent skills collection by Addy Osmani |
 | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | Academic research pipeline (`deep-research`, `academic-paper`, `academic-paper-reviewer`, `academic-pipeline`) |
+| [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Lazy-senior-dev code minimalism pack (`ponytail`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain`, `ponytail-help`, `ponytail-review`) |
 
 ## Deploying to a New Project
 
@@ -85,6 +86,7 @@ claude plugin marketplace add coreyhaines31/marketingskills
 claude plugin marketplace add JuliusBrussee/caveman
 claude plugin marketplace add addyosmani/agent-skills
 claude plugin marketplace add Imbad0202/academic-research-skills
+claude plugin marketplace add DietrichGebert/ponytail
 ```
 
 Then install marketplace plugins:
@@ -96,6 +98,7 @@ claude plugin install marketing-skills@marketingskills
 claude plugin install caveman@caveman
 claude plugin install agent-skills@addy-agent-skills
 claude plugin install academic-research-skills@academic-research-skills
+claude plugin install ponytail@ponytail
 ```
 
 Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):
@@ -122,6 +125,7 @@ npx skills add coreyhaines31/marketingskills --list
 | `caveman` | `JuliusBrussee/caveman` |
 | `addy-agent-skills` | `addyosmani/agent-skills` |
 | `academic-research-skills` | `Imbad0202/academic-research-skills` |
+| `ponytail` | `DietrichGebert/ponytail` |
 
 ## Global Settings Location
 

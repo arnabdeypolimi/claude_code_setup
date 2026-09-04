@@ -174,6 +174,7 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable). Useful when
 | Marketing | — | **marketing-skills** |
 | Caveman Mode | — | **caveman** |
 | Agent Skills | — | **agent-skills** |
+| Ponytail (Lazy Dev) | — | **ponytail** |
 
 ## Repo layout
 
@@ -245,6 +246,7 @@ If you'd rather not run the installer:
    claude plugin marketplace add JuliusBrussee/caveman
    claude plugin marketplace add addyosmani/agent-skills
    claude plugin marketplace add Imbad0202/academic-research-skills
+   claude plugin marketplace add DietrichGebert/ponytail
    ```
 
 5. Install marketplace plugins:
@@ -255,6 +257,7 @@ If you'd rather not run the installer:
    claude plugin install caveman@caveman
    claude plugin install agent-skills@addy-agent-skills
    claude plugin install academic-research-skills@academic-research-skills
+   claude plugin install ponytail@ponytail
    ```
 
 ## Plugin marketplaces
@@ -268,6 +271,7 @@ If you'd rather not run the installer:
 | `caveman` | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | Ultra-compressed responses |
 | `addy-agent-skills` | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | Addy Osmani's agent skills |
 | `academic-research-skills` | [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | Academic research pipeline (research → write → review → revise → finalize) |
+| `ponytail` | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | Lazy senior dev mode — YAGNI, stdlib first, no unrequested abstractions |
 
 ## Global settings
 
