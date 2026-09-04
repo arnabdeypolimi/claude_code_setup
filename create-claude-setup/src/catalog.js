@@ -218,6 +218,25 @@ export const GROUPS = [
     copyAgents: false,
     copyTemplates: false,
   },
+  {
+    id: 'ponytail',
+    label: 'Ponytail (Lazy Senior Dev)',
+    hint: 'YAGNI-enforcing code minimalism skill pack',
+    required: false,
+    skills: [],
+    plugins: [],
+    marketplaceSetup: [
+      {
+        command: 'claude plugin marketplace add DietrichGebert/ponytail',
+        install: 'claude plugin install ponytail@ponytail',
+        marketplace: { id: 'ponytail', source: 'DietrichGebert/ponytail' },
+        pluginName: 'ponytail',
+        marketplaceFlag: 'ponytail',
+      },
+    ],
+    copyAgents: false,
+    copyTemplates: false,
+  },
 ];
 
 export function getGroupById(id) {
