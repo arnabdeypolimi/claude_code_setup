@@ -176,8 +176,6 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable). Useful when
 | Agent Skills | — | **agent-skills** |
 | Ponytail (Lazy Dev) | — | **ponytail** |
 
-Not covered by the installer: [dwzhu-pku/PaperBanana](https://github.com/dwzhu-pku/PaperBanana)'s `paperbanana` skill is a standalone Python multi-agent framework (not a Claude Code plugin) — clone it separately and run `clawhub install paperbanana` or `python skill/run.py` from within that repo.
-
 ## Repo layout
 
 ```
