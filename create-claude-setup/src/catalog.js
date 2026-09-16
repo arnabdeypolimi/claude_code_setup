@@ -237,6 +237,27 @@ export const GROUPS = [
     copyAgents: false,
     copyTemplates: false,
   },
+  {
+    id: 'headroom',
+    label: 'Headroom (Context Compression)',
+    hint: 'CLI proxy that compresses tool outputs before they reach the LLM',
+    required: false,
+    skills: [],
+    plugins: [],
+    marketplaceSetup: [],
+    // External CLI tools. The installer offers to run `install` (machine-wide) if `requires`
+    // is on PATH; `next` is printed after a successful install for the user to run themselves.
+    toolSetup: [
+      {
+        name: 'headroom',
+        requires: 'uv',
+        install: ['uv', 'tool', 'install', '--python', '3.13', 'headroom-ai[all]'],
+        next: 'headroom wrap claude',
+      },
+    ],
+    copyAgents: false,
+    copyTemplates: false,
+  },
 ];
 
 export function getGroupById(id) {
@@ -247,6 +268,7 @@ export function resolveInstallPlan(selectedGroupIds) {
   const skills = new Set();
   const plugins = new Set();
   const marketplaceSetup = [];
+  const toolSetup = [];
   let copyAgents = false;
   let copyTemplates = false;
 
@@ -262,6 +284,7 @@ export function resolveInstallPlan(selectedGroupIds) {
         plugins.add(`${m.pluginName}@${m.marketplaceFlag}`);
       }
     });
+    toolSetup.push(...(group.toolSetup ?? []));
     if (group.copyAgents) copyAgents = true;
     if (group.copyTemplates) copyTemplates = true;
   }
@@ -270,6 +293,7 @@ export function resolveInstallPlan(selectedGroupIds) {
     skills: [...skills],
     plugins: [...plugins],
     marketplaceSetup,
+    toolSetup,
     copyAgents,
     copyTemplates,
   };

@@ -175,6 +175,9 @@ Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable). Useful when
 | Caveman Mode | — | **caveman** |
 | Agent Skills | — | **agent-skills** |
 | Ponytail (Lazy Dev) | — | **ponytail** |
+| Headroom (Context Compression) | — | — (optional CLI install) |
+
+Headroom ([headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom)) is a standalone CLI, not a plugin. If `uv` is on your PATH, the installer offers to run `uv tool install --python 3.13 "headroom-ai[all]"` for you (defaults to No; installs machine-wide); otherwise it prints the command. Afterwards, run `headroom wrap claude` (undo with `headroom unwrap claude`).
 
 ## Repo layout
 

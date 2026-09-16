@@ -101,6 +101,13 @@ claude plugin install academic-research-skills@academic-research-skills
 claude plugin install ponytail@ponytail
 ```
 
+Optional external CLI — [headroom](https://github.com/headroomlabs-ai/headroom) context compression (not a plugin; installs machine-wide):
+
+```bash
+uv tool install --python 3.13 "headroom-ai[all]"
+headroom wrap claude
+```
+
 Marketing skills can also be installed via the `npx skills` CLI (installs to `.agents/skills/` and symlinks into `.claude/skills/`):
 
 ```bash

@@ -8,6 +8,7 @@ import { GROUPS } from '../src/catalog.js';
 import { install, readManifest } from '../src/installer.js';
 import { update } from '../src/updater.js';
 import { claudeAvailable, installAllPlugins } from '../src/plugin-installer.js';
+import { commandAvailable, formatCommand, runCommand } from '../src/tool-installer.js';
 
 // Node version check
 const [major] = process.versions.node.split('.').map(Number);
@@ -216,6 +217,29 @@ async function main() {
       }
       console.log('');
     }
+  }
+
+  // ── External tools ────────────────────────────────────────────────────────
+  for (const tool of plan.toolSetup) {
+    const installCmd = formatCommand(tool.install);
+    let installed = false;
+
+    if (commandAvailable(tool.requires)) {
+      const choice = await confirm({
+        message: `Install ${tool.name} now? (${pc.dim(installCmd)} — installs machine-wide)`,
+        initialValue: false,
+      });
+      if (!isCancel(choice) && choice) {
+        installed = runCommand(tool.install);
+        if (!installed) console.log(pc.red(`  ${tool.name} install failed.`));
+      }
+    } else {
+      console.log(pc.dim(`  \`${tool.requires}\` not found — install ${tool.name} manually:`));
+    }
+
+    if (installed) console.log(pc.dim(`  Then run: `) + pc.yellow(tool.next));
+    else console.log(pc.yellow(`  ${installCmd}`));
+    console.log('');
   }
 
   // Skill summary
